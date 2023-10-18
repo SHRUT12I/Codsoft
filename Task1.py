@@ -8,12 +8,14 @@ def load_tasks():
 def save_tasks(tasks):
     with open('tasks.json', 'w') as file:
         json.dump(tasks, file, indent=4)
+# Add a task For To-DO List
 def add_task(tasks):
     title = input("Enter task title: ")
     new_task = {"title": title, "done": False}
     tasks.append(new_task)
     save_tasks(tasks)
     print(f"Task '{title}' added successfully!")
+# Mark a task as done For To-DO List
 def mark_done(tasks):
     show_tasks(tasks)
     try:
